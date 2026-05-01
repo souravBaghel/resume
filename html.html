@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Advertisement Slider</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fadeSlider 25s infinite;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Each image delay */
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 5s;
+}
+.slide:nth-child(3) {
+  animation-delay: 10s;
+}
+.slide:nth-child(4) {
+  animation-delay: 15s;
+}
+.slide:nth-child(5) {
+  animation-delay: 20s;
+}
+
+/* Fade In Fade Out */
+@keyframes fadeSlider {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Overlay Content */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 10;
+  animation: slideUp 2s ease;
+}
+
+.content h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.content button {
+  padding: 14px 32px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.content button:hover {
+  background: #e63c3c;
+  transform: scale(1.05);
+}
+
+/* Animated Sections */
+.section {
+  padding: 100px 10%;
+  background: white;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transform: translateY(50px);
+  opacity: 0;
+  animation: cardFade 1s forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Slider -->
+<section class="hero">
+  <div class="slider">
+    <div class="slide">
+      <img src="https://picsum.photos/1600/900?random=1" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/1600/900?random=2" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/1600/900?random=3" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/1600/900?random=4" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/1600/900?random=5" alt="">
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Creative Advertisement</h1>
+    <p>
+      Stunning fade in fade out advertisement slider with smooth animations
+      and beautiful section transitions.
+    </p>
+    <button>Explore More</button>
+  </div>
+</section>
+
+<!-- Animated Section -->
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Modern responsive websites with beautiful UI and strong performance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Digital Marketing</h3>
+      <p>Boost your business with SEO, Ads, and strong online visibility.</p>
+    </div>
+
+    <div class="card">
+      <h3>Brand Design</h3>
+      <p>Creative branding solutions for modern businesses and startups.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+// Optional JS for future controls
+console.log("Advertisement slider running...");
+</script>
+
+</body>
+</html>
