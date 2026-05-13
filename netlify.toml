@@ -1,0 +1,4 @@
+[build]
+  # This command makes Netlify skip the build on every push.
+  # Remove or change this if you want to re-enable auto-deploy.
+  ignore = "exit 0"
